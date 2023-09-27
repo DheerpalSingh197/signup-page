@@ -70,3 +70,26 @@
         color: darkblue;
     }
 }
+
+
+.circle-1{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    background: linear-gradient(to left,#ffffff33, rgba(255, 255, 255, 0.658) );
+    position: absolute;
+    bottom: 400px;
+    left: 500px;
+
+}
+
+.circle-2{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    background: linear-gradient(to right,#ffffff33, rgba(255, 255, 255, 0.687) );
+    position: absolute;
+    bottom: 120px;
+    right: 500px;
+
+}
