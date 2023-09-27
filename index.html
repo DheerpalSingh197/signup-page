@@ -12,7 +12,7 @@
 
     <div class="outer-box">
         <div class="inner-box">
-            <form action="">
+            <form action="https://sheetdb.io/api/v1/usqeoimzscqnb" method="post" id="sheetdb-form">
                 <header class="header">
                     <h2>Sign Up Page</h2>
                     <p>It Just Take 30 Seconds</p>
@@ -20,17 +20,17 @@
 
                 <main class="main">
                     <p> <label for="fullname">Full Name</label> <br>
-                        <input type="text" name="fullname" id="fullname" placeholder="Enter Your Name">
+                        <input type="text" name="data[fullname]" id="fullname" placeholder="Enter Your Name">
                     </p>
 
                     <p>
                         <label for="email">Your Email</label> <br>
-                        <input type="email" name="email" id="email" placeholder="Enter Email">
+                        <input type="email" name="data[email]" id="email" placeholder="Enter Email">
                     </p>
 
                     <p>
                         <label for="password">Password</label> <br>
-                        <input type="password" name="password" id="password" placeholder="Password">
+                        <input type="password" name="data[password]" id="password" placeholder="Password">
                     </p>
 
                     <p>
@@ -45,8 +45,27 @@
 
             </form>
 
+         
         </div>
     </div>
+
+    <script>
+              var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            window.open('sign-done.html', '_blank');
+
+          });
+        });  
+    </script>
+
 </body>
 
 </html>
